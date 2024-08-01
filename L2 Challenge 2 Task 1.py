@@ -17,12 +17,12 @@ def high_or_low(user_num, secret_num):
 def secret_number():
     secret_num = random.randint(1, 100)
     user_num = 0
-    tries_count = 1
+    tries_count = 0
     previous_guess = 0
     #While loop is needed to keep track of whether the user has guessed correctly.
     while user_num != secret_num:
         user_num = int(input("Please enter a guess: "))
-        if tries_count > 1 and previous_guess == user_num:
+        if tries_count > 0 and previous_guess == user_num:
             print("You guessed the same number.")
             continue
         previous_guess = user_num
